@@ -6,81 +6,28 @@
 	<script src="https://cdn.bootcss.com/jquery/3.3.1/jquery.min.js"></script>
 	<script src="https://cdn.bootcss.com/socket.io/2.2.0/socket.io.js"></script>
 	<script src="../tools/websocket.js"></script>
-	<style>
-		.message_box {
-			height: 400px;
-			border: 1px solid #000;
-			display: flex;
-
-		}
-
-		.left {
-			flex: 1;
-			border-right: 1px solid #000;
-			padding: 0 20px;
-			overflow-y: auto;
-		}
-
-		li {
-			list-style: none;
-		}
-
-		.right {
-			width: 200px;
-		}
-
-		.message {
-			margin-top: 20px;
-			width: 200px;
-			height: 36px;
-			border-radius: 4px;
-			outline: none;
-			border: 1px solid #1b1b1b
-		}
-
-		button {
-			padding: 6px;
-		}
-
-		.me {
-			text-align: right;
-		}
-
-		.other > span {
-			color: #42FF60;
-			padding-right: 6px;
-		}
-
-		.me > span {
-			color: red;
-			padding-left: 6px;
-		}
-	</style>
+	<link rel="stylesheet" href="/static/index.css">
 </head>
 <body>
-<label>
+<label class="username_box">
 	用户名
 	<input value="xuliang" class="username" type="text">
+	<button class="connect">connect</button>
 </label>
-<button class="connect">connect</button>
 
 <div class="message_box">
+	<ul class="right">
+			<h2>上下线消息</h2>
+	</ul>
 	<ul class="left">
 
 	</ul>
-	<div class="right">
 
-	</div>
 </div>
 
-<label>
+<div class="send_box">
 	<input class="message" type="text">
-	<button class="send">send</button>
-</label>
-
-
-<div class="user">
-
+	<button class="send">发射</button>
 </div>
 
 <script src="./index.js"></script>

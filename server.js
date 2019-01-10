@@ -30,7 +30,7 @@ server.on('request', function (req, res) {
 });
 server.listen(8080, HOST);
 
-open(`http://localhost:8080`);
+// open(`http://localhost:8080`);
 
 console.log(`Server is running at http://${getIPAdress()}:8080`);
 

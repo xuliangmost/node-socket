@@ -1,6 +1,7 @@
 var ws;
 const domMessage = $('.message');
 const domLeft = $('.left');
+const domRight = $('.right');
 $('.connect').click(function () {
 	if (ws) {
 		return false
@@ -10,27 +11,29 @@ $('.connect').click(function () {
 	// ws = new WebSocket(host);
 
 	ws = new MySocket(host);
-	ws.on('otherConnect', function (user) {
-		$('.connect').text('connected');
-		const line_message = document.createElement('p');
-		line_message.innerText = user + ' 已上线';
-		$('.right').append(line_message);
-		/*ws.emit({
-			to: user[i],
-			message: domMessage.val(),
-			type: 'message',
-		})*/
-	});
+	ws.sockets.onerror = function (event) {
+		console.log(event.data);
+		ws = null;
+	};
+
+
 	ws.on('message', function (data) {
 		const message = '<p class="other"><span>' + data.from + ':</span>' + data.message + '</p>';
 		domLeft.append('<li>' + message + '</li>');
 		domMessage.val('');
 		domLeft.scrollTop(1000000000);
 	});
+
+
+	ws.on('otherConnect', function (user) {
+		$('.connect').text('connected');
+		const line_notice = '<p><span class="online">' + user + ': 已上线</span></p>';
+		domRight.append('<li>' + line_notice + '</li>');
+	});
+
 	ws.on('otherDisConnect', function (user) {
-		const line_message = document.createElement('p');
-		line_message.innerText = user + '已下线';
-		$('.right').append(line_message);
+		const line_notice = '<p><span class="offline">' + user + ': 已下线</span></p>';
+		$('.right').append(line_notice);
 	})
 });
 

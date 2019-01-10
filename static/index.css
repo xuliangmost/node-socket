@@ -1,0 +1,159 @@
+/*
+https://drscdn.500px.org/photo/137336201/q%3D80_m%3D2000/v2?webp=true&sig=1359b078825a45b17bd224a7a0c0791dc16ea55c369d88e5c3a31d445030d8d5
+*/
+html, body {
+    height: 100%;
+}
+
+html {
+    background: url("https://drscdn.500px.org/photo/137336201/q%3D80_m%3D2000/v2?webp=true&sig=1359b078825a45b17bd224a7a0c0791dc16ea55c369d88e5c3a31d445030d8d5") no-repeat center;
+    background-size: cover;
+}
+
+body {
+    width: 80%;
+    max-width: 800px;
+    margin: 0 auto;
+    overflow: hidden;
+    user-select: none;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+}
+
+.message_box {
+    height: 600px;
+    border: 1px solid #000;
+    display: flex;
+}
+
+.left {
+    flex: 1;
+    border-left: 1px solid #000;
+    padding: 0 20px;
+    overflow-y: auto;
+}
+
+.left li {
+    margin: 6px;
+}
+
+.left .other {
+    font-size: 22px;
+}
+
+li {
+    list-style: none;
+}
+
+.right {
+    width: 200px;
+}
+
+.right > h2 {
+    text-align: center;
+    font-size: 14px;
+    border-bottom: 1px solid #838383;
+    margin: 0 10px;
+    padding: 10px 0;
+}
+
+.right {
+    text-align: center;
+}
+
+.right > li {
+    margin: 4px 0;
+}
+
+.right span.online {
+    color: #396EFF;
+    padding-right: 6px;
+}
+
+.right span.offline {
+    color: #FF0C00;
+    padding-right: 6px;
+}
+
+.message {
+    width: 200px;
+    height: 36px;
+    border-radius: 4px;
+    outline: none;
+}
+
+.username_box {
+    margin: 6px 0;
+    display: block;
+    border: 1px solid transparent;
+}
+
+.username {
+    width: 200px;
+    border-radius: 4px;
+    outline: none;
+    padding: 10px;
+}
+
+button {
+    padding: 6px;
+    background: #9AD9FF;
+    outline: none;
+    border: 0;
+    border-radius: 4px;
+    color: #5B5B5B;
+}
+
+input {
+    padding: 0 4px;
+    border: 1px solid transparent;
+    transition: all .4s ease;
+}
+
+input:hover {
+    border: 1px solid #87CFFF;
+}
+
+input:focus {
+    border: 1px solid #87CFFF;
+    box-shadow: 0 0 3px 1px #87CFFF;
+}
+
+button:active {
+    outline: none;
+    opacity: .8;
+}
+
+button:hover {
+    cursor: pointer;
+}
+
+.me {
+    text-align: right;
+    font-size: 22px;
+}
+
+.me > span {
+    color: red;
+    padding-left: 6px;
+}
+
+.send_box {
+    margin: 20px auto;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.send {
+    margin-left: 10px;
+    width: 50px;
+}
+
+.other span {
+    color: #396EFF;
+    padding-right: 6px;
+}

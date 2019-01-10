@@ -8,8 +8,9 @@ function startSocket () {
 	var wbSocketUsers = {};
 	const wss = new WebSocketServer({
 		port: 3000,
-		verifyClient: function (info) {
-			return !!url.parse(info.req.url, true).query.uuid && !wbSocketUsers[url.parse(info.req.url, true).query.uuid]
+		verifyClient: function (info, callBack) {
+			const flag = !!url.parse(info.req.url, true).query.uuid && !wbSocketUsers[url.parse(info.req.url, true).query.uuid];
+			callBack(flag, flag ? 200 : 403);
 		}
 	});
 
@@ -52,7 +53,6 @@ function startSocket () {
 				wss.broadcast(nowUser, 'otherDisConnect');
 			}
 		});
-
 	});
 }
 
