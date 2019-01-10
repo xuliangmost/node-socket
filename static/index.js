@@ -38,6 +38,7 @@ $('.connect').click(function () {
 
 
 	ws.sockets.onclose = function () {
+		alert('服务器连接失败');
 		ws = null;
 	}
 });
