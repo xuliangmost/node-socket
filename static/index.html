@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Title</title>
+	<script src="https://cdn.bootcss.com/jquery/3.3.1/jquery.min.js"></script>
+	<script src="https://cdn.bootcss.com/socket.io/2.2.0/socket.io.js"></script>
+	<script src="../tools/websocket.js"></script>
+	<style>
+		.message_box {
+			height: 400px;
+			border: 1px solid #000;
+			display: flex;
+
+		}
+
+		.left {
+			flex: 1;
+			border-right: 1px solid #000;
+			padding: 0 20px;
+			overflow-y: auto;
+		}
+
+		li {
+			list-style: none;
+		}
+
+		.right {
+			width: 200px;
+		}
+
+		.message {
+			margin-top: 20px;
+			width: 200px;
+			height: 36px;
+			border-radius: 4px;
+			outline: none;
+			border: 1px solid #1b1b1b
+		}
+
+		button {
+			padding: 6px;
+		}
+
+		.me {
+			text-align: right;
+		}
+
+		.other > span {
+			color: #42FF60;
+			padding-right: 6px;
+		}
+
+		.me > span {
+			color: red;
+			padding-left: 6px;
+		}
+	</style>
+</head>
+<body>
+<label>
+	用户名
+	<input value="xuliang" class="username" type="text">
+</label>
+<button class="connect">connect</button>
+
+<div class="message_box">
+	<ul class="left">
+
+	</ul>
+	<div class="right">
+
+	</div>
+</div>
+
+<label>
+	<input class="message" type="text">
+	<button class="send">send</button>
+</label>
+
+
+<div class="user">
+
+</div>
+
+<script src="./index.js"></script>
+</body>
+</html>
