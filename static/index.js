@@ -34,7 +34,12 @@ $('.connect').click(function () {
 	ws.on('otherDisConnect', function (user) {
 		const line_notice = '<p><span class="offline">' + user + ': 已下线</span></p>';
 		$('.right').append(line_notice);
-	})
+	});
+
+
+	ws.sockets.onclose = function () {
+		ws = null;
+	}
 });
 
 $('.send').click(function () {
