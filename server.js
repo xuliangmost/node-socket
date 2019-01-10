@@ -1,9 +1,9 @@
 const http = require('http');
 
-const startSocket = require('./tools/socketServer');
+const startSocket = require('./script/socketServer');
 
 const open = require('open');
-const tools = require('./tools/method');
+const tools = require('./script/method');
 
 
 const HOST = process.env.HOST || '0.0.0.0';
