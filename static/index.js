@@ -16,14 +16,12 @@ $('.connect').click(function () {
 		ws = null;
 	};
 
-
 	ws.on('message', function (data) {
 		const message = '<p class="other"><span>' + data.from + ':</span>' + data.message + '</p>';
 		domLeft.append('<li>' + message + '</li>');
 		domMessage.val('');
 		domLeft.scrollTop(1000000000);
 	});
-
 
 	ws.on('otherConnect', function (user) {
 		$('.connect').text('connected');
@@ -35,7 +33,6 @@ $('.connect').click(function () {
 		const line_notice = '<p><span class="offline">' + user + ': 已下线</span></p>';
 		$('.right').append(line_notice);
 	});
-
 
 	ws.sockets.onclose = function () {
 		alert('服务器连接失败');
