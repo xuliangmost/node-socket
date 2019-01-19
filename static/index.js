@@ -1,4 +1,5 @@
-var ws;
+let ws;
+const $ = window.$;
 const domMessage = $('.message');
 const domLeft = $('.left');
 const domRight = $('.right');
